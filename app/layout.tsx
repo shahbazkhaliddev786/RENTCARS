@@ -1,7 +1,5 @@
 import type React from "react"
-import { Provider } from "react-redux"
-import { store } from "@/lib/store"
-import { ToastProvider } from "@/components/toast-provider"
+import { Providers } from "@/components/providers"
 import "./globals.css"
 
 export default function RootLayout({
@@ -12,14 +10,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider store={store}>
-          <ToastProvider>{children}</ToastProvider>
-        </Provider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
 }
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  generator: "v0.dev",
+}
